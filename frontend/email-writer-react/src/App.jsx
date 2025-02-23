@@ -15,8 +15,8 @@ function App() {
     setLoading(true);
     setError('');
     try {
-
-      const response = await axios.post('http://localhost:8080/api/email/generate',
+      console.log("Backend URL:", import.meta.env.VITE_BACKEND_URL);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/email/generate`,
             {
               emailContent,
               tone
